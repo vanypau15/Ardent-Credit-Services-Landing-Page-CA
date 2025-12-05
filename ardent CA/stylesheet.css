@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ------------ Global Reset ------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------ Base Styles ------------ */
+body {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #F5F5F5;   /* page background */
+    color: #111827;
+}
+
+/* ------------ Navbar ------------ */
+.navbar {
+    background-color: #ffffff; /* white background */
+    padding: 16px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+.coming-soon {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8e0a3b; /* burgundy */
+    margin-left: auto; /* pushes text to the right */
+}
+
+
+/* ------------ Hero Section ------------ */
+.hero-section {
+    position: relative;            /* needed for absolute icons */
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+}
+
+/* Center content */
+.hero-section .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Text block */
+.hero-details {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Main title */
+.title {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+/* Force manual line breaks */
+.break {
+    display: block;
+}
+
+/* Subtext */
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4B5563;
+    max-width: 520px;
+    margin: 0 auto 32px;
+}
+
+/* ------------ Buttons ------------ */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    border-radius: 999px;          /* pill shape */
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.15s ease,
+                box-shadow 0.15s ease;
+}
+
+/* Get Started – light gray */
+.get-started {
+    background-color: #E3E3E3;
+    color: #111827;
+}
+
+/* About Us – burgundy */
+.about-us {
+    background-color: #8e0a3b;
+    color: #ffffff;
+}
+
+/* Subtle hover */
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* ------------ Hero Icons ------------ */
+
+/* Common style for all three */
+.hero-icon-right img,
+.hero-icon-left img,
+.hero-icon-top-right img {
+    width: 110px;    /* tweak if needed */
+    height: auto;
+    display: block;
+}
+
+/* Position containers */
+.hero-icon-left,
+.hero-icon-right,
+.hero-icon-top-right {
+    position: absolute;
+}
+
+/* Bottom-left lock style icon */
+.hero-icon-left {
+    left: 60px;
+    bottom: 80px;
+}
+
+/* Bottom-right chart style icon */
+.hero-icon-right {
+    right: 80px;
+    bottom: 70px;
+}
+
+/* Top-right globe style icon */
+.hero-icon-top-right {
+    right: 70px;
+    top: 80px;
+}
+
+/* ------------ Wave Divider ------------ */
+
+.wave-divider img,
+.wave-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------- WHO WE ARE SECTION ---------- */
+
+.who-we-are {
+    max-width: 1100px;
+    margin: 80px auto 120px;        /* space around section */
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.4fr 1.2fr; /* left column wider */
+    grid-template-rows: auto auto;      /* 2 rows */
+    column-gap: 40px;
+    row-gap: 32px;
+}
+
+/* top-left text */
+.who-we-are .section-content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: block;                /* ensure normal block layout */
+}
+
+.section-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #111827;
+}
+
+.section-description {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #4b5563;
+    max-width: 540px;
+    margin-bottom: 14px;
+}
+
+/* top-right image */
+.who-we-are-image-right {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: start;
+}
+
+.who-we-are-image-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+/* bottom-left image */
+.who-we-are-image-left {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.who-we-are-image-left img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+/* bottom-right stats */
+.who-we-are-stats {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #d1d5db;
+    font-size: 0.92rem;
+}
+
+.stat {
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 1px solid #d1d5db;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+.stat-text {
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+/* --------- Responsive: hero + who-we-are --------- */
+
+@media (max-width: 900px) {
+    .hero-section {
+        padding: 40px 20px;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .description {
+        font-size: 0.95rem;
+    }
+
+    /* Hide side icons on small screens if they get in the way */
+    .hero-icon-left,
+    .hero-icon-right,
+    .hero-icon-top-right {
+        display: none;
+    }
+
+    .who-we-are {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        padding: 0 20px;
+        row-gap: 24px;
+    }
+
+    .who-we-are .section-content {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .who-we-are-image-right {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .who-we-are-image-left {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .who-we-are-stats {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        grid-template-columns: 1fr;
+        border-left: none;
+        border-right: none;
+    }
+
+    .stat {
+        border-right: none;
+        border-bottom: 1px solid #d1d5db;
+    }
+
+    .stat:last-child {
+        border-bottom: none;
+    }
+}  /* 👈 close the 900px media query here */
+
+
+/* ---------- Our Values Section ---------- */
+
+.our-values {
+    background-color: #8e0a3b;    /* burgundy background */
+    padding: 80px 40px 100px;
+    color: #ffffff;
+    
+}
+
+.our-values .section-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+   
+}
+
+/* heading */
+.our-values .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color:#ffffff;
+}
+
+/* intro paragraph under heading */
+.our-values .section-description {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto 40px;
+    color:#ffffff;
+}
+
+/* cards container */
+.values-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* individual card */
+.value-card {
+    background-color: #ffffff;
+    color: #111827;
+    border-radius: 24px;
+    padding: 32px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* icon at top of card */
+.value-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* card title */
+.value-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* card description */
+.value-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+
+/* responsive: stack cards on small screens */
+@media (max-width: 640px) {
+    .our-values {
+        padding: 60px 20px 80px;
+    }
+
+    .values-list {
+        grid-template-columns: 1fr;
+    }
+}  /* 👈 CLOSE the 640px media here */
+
+
+/* ---------- How To Pay Section ---------- */
+
+.how-to-pay {
+    background-color: #f6f6f7;     /* light grey band */
+    border-top: 2px solid #8e0a3b; /* burgundy lines top/bottom */
+    border-bottom: 2px solid #8e0a3b;
+    padding: 60px 40px;
+}
+
+.how-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* left text block */
+.how-text {
+    flex: 1;
+}
+
+.how-to-pay .section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #111827;
+}
+
+.how-to-pay .section-description {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #111827;
+    max-width: 430px;
+    margin-bottom: 12px;
+}
+
+/* right card */
+.how-card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 28px 32px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* phone row inside card */
+.how-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.how-icon {
+    width: 28px;
+    height: auto;
+}
+
+.how-phone {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #8e0a3b;       /* burgundy */
+    text-decoration: underline;
+}
+
+.how-card-text {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: #111827;
+}
+
+/* responsive: stack how-to-pay on small screens */
+@media (max-width: 768px) {
+    .how-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+    }
+
+    .how-card {
+        padding: 24px 20px;
+    }
+}
+
+
+/* ---------- Footer ---------- */
+
+.footer {
+    background: #8e0a3b;              /* base burgundy */
+    color: #ffffff;
+    padding: 60px 40px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle circle shapes in background (optional) */
+.footer::before,
+.footer::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.footer::before {
+    width: 260px;
+    height: 260px;
+    right: 12%;
+    top: 10%;
+}
+
+.footer::after {
+    width: 220px;
+    height: 220px;
+    right: 30%;
+    bottom: -40px;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; /* sit above circles */
+}
+
+/* three-column content row */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+/* generic column */
+.footer-col {
+    flex: 1;
+}
+
+/* left column */
+.footer-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footer-address {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* middle + right columns */
+.footer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* contact column */
+.footer-contact-line {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.footer-phone,
+.footer-email {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* bottom copyright row */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    margin-top: 36px;
+    padding-top: 16px;
+    text-align: left;
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+}
+
+/* responsive for footer */
+@media (max-width: 900px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+    }
+}
